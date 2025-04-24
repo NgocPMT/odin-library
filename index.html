@@ -7,11 +7,39 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>Library</header>
+    <header>
+      <h1>Library</h1>
+    </header>
     <main>
+      <button id="new-book-button">New Book</button>
       <section id="book-container"></section>
     </main>
 
+    <dialog>
+      <form>
+        <p>
+          <label for="title">Title:</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            minlength="2"
+            required
+            autofocus
+          />
+        </p>
+        <p>
+          <label for="author">Author:</label>
+          <input id="author" type="text" name="author" minlength="2" required />
+        </p>
+        <p>
+          <label for="pages">Pages:</label>
+          <input id="pages" type="number" name="pages" minlength="2" required />
+        </p>
+        <button class="modal-add-button">Add Book</button>
+        <button class="modal-close-button">Close</button>
+      </form>
+    </dialog>
     <script src="index.js"></script>
   </body>
 </html>

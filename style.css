@@ -25,4 +25,7 @@ body {
   padding: 2rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   min-height: 20rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
 }
