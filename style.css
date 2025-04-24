@@ -13,21 +13,59 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+  padding: 2rem;
+}
+
+main h1 {
+  text-align: center;
+}
+
+.new-book-button {
+  margin: 2rem 0;
+  background-color: rgb(40, 123, 219);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-book-button:hover {
+  background-color: rgb(78, 155, 243);
+}
+
 #book-container {
-  width: 80vw;
+  width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1rem;
 }
 
 .book-card {
+  position: relative;
   padding: 2rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  min-height: 20rem;
+  border-radius: 1rem;
+  min-height: 10rem;
   display: grid;
   place-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15px;
+  background-color: rgb(124, 170, 223);
 }
 
 #add-book-modal {
@@ -66,18 +104,6 @@ body {
 
 #add-book-form input:invalid {
   outline: 2px solid red;
-}
-
-.new-book-button {
-  background-color: rgb(40, 123, 219);
-  color: white;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .modal-buttons {

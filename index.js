@@ -13,6 +13,16 @@ function addBookToLibrary(id, title, author, pages) {
 
 addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
 addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
 
 console.log(myLibrary);
 
