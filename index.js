@@ -34,7 +34,7 @@ bookContainer.innerHTML = books;
 
 const newBookButton = document.querySelector(".new-book-button");
 const addBookModal = document.querySelector("#add-book-modal");
-const modalAddBookButton = document.querySelector(".modal-add-book-button");
+const modalAddBookButton = document.querySelector(".modal-add-button");
 const modalCloseButton = document.querySelector(".modal-close-button");
 
 newBookButton.addEventListener("click", () => addBookModal.showModal());
