@@ -19,6 +19,7 @@ function deleteBookFromLibrary(id) {
       break;
     }
   }
+  renderBooks();
 }
 
 addBookToLibrary(
@@ -30,25 +31,36 @@ addBookToLibrary(
 );
 addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500, true);
 
-console.log(myLibrary);
-
 const bookContainer = document.getElementById("book-container");
 
-let books = myLibrary
-  .map(
-    (book) => `
-    <div class="book-card" data-uid=${book.id}>
-      <h3 class="book-title">${book.title}</h3>
-      <p class="book-author">${book.author}</p>
-      <p class="book-pages">${book.pages} pages</p>
-      <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
-      <button class="delete-book">X</button>
-    </div>
-    `
-  )
-  .join("");
+function renderBooks() {
+  console.log(myLibrary);
+  let books = myLibrary
+    .map(
+      (book) => `
+      <div class="book-card">
+        <h3 class="book-title">${book.title}</h3>
+        <p class="book-author">${book.author}</p>
+        <p class="book-pages">${book.pages} pages</p>
+        <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
+        <button class="delete-book" data-uid=${book.id}>X</button>
+      </div>
+      `
+    )
+    .join("");
 
-bookContainer.innerHTML = books;
+  bookContainer.innerHTML = books;
+
+  const deleteBookButtons = document.querySelectorAll(".delete-book");
+
+  deleteBookButtons.forEach((element) => {
+    element.addEventListener("click", () =>
+      deleteBookFromLibrary(element.dataset.uid)
+    );
+  });
+}
+
+renderBooks();
 
 const newBookButton = document.querySelector(".new-book-button");
 const addBookModal = document.querySelector("#add-book-modal");
