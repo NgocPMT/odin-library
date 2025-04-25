@@ -22,17 +22,25 @@ function deleteBookFromLibrary(id) {
   renderBooks();
 }
 
+Book.prototype.changeStatus = function () {
+  this.read = !this.read;
+
+  renderBooks();
+};
+
 function renderBooks() {
   const bookContainer = document.getElementById("book-container");
   console.log(myLibrary);
   let books = myLibrary
     .map(
       (book) => `
-      <div class="book-card">
+      <div class="book-card" data-uid=${book.id}>
         <h3 class="book-title">${book.title}</h3>
         <p class="book-author">${book.author}</p>
         <p class="book-pages">${book.pages} pages</p>
-        <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
+        <p class="book-status" style="color: ${
+          book.read ? "green" : "black"
+        }">${book.read ? "read" : "not read yet"}<p/>
         <button class="delete-book" data-uid=${
           book.id
         } aria-label="delete book" title="delete this book">X</button>
@@ -50,11 +58,21 @@ function renderBooks() {
       deleteBookFromLibrary(element.dataset.uid)
     );
   });
+
+  const bookEls = document.querySelectorAll(".book-card");
+
+  bookEls.forEach((bookEl) => {
+    bookEl.addEventListener("click", () => {
+      const uid = bookEl.dataset.uid;
+
+      const changingBook = myLibrary.find((book) => book.id === uid);
+
+      if (changingBook) {
+        changingBook.changeStatus();
+      }
+    });
+  });
 }
-Book.prototype.setStatus = function () {
-  this.read = !this.read;
-  renderBooks();
-};
 
 addBookToLibrary(
   crypto.randomUUID(),
