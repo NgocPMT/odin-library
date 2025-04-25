@@ -54,8 +54,23 @@ main h1 {
   min-height: 10rem;
   display: grid;
   place-items: center;
+  text-align: center;
   font-size: 1rem;
   overflow: hidden;
+}
+
+.book-title {
+  font-size: 1.25rem;
+}
+
+.book-author {
+  font-size: 1.125rem;
+  color: rgb(98, 98, 98);
+}
+
+.book-pages {
+  font-size: 1rem;
+  color: rgb(98, 98, 98);
 }
 
 .book-card::before {

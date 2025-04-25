@@ -32,9 +32,9 @@ let books = myLibrary
   .map(
     (book) => `
     <div class="book-card">
-      <h3>Title: ${book.title}</h3>
-      <p>Author: ${book.author}</p>
-      <p>Number of pages: ${book.pages}</p>
+      <h3 class="book-title">${book.title}</h3>
+      <p class="book-author">${book.author}</p>
+      <p class="book-pages">${book.pages} pages</p>
     </div>
     `
   )
