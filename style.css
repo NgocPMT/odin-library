@@ -22,6 +22,11 @@ main h1 {
   text-align: center;
 }
 
+.guideline {
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .new-book-button {
   margin: 2rem 0;
   background-color: rgb(40, 123, 219);
@@ -114,6 +119,11 @@ main h1 {
   cursor: pointer;
 }
 
+.delete-book:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgb(243, 77, 77);
+  border-radius: 50%;
+}
 
 #add-book-modal {
   padding: 3rem;
