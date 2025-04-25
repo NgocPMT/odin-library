@@ -12,6 +12,15 @@ function addBookToLibrary(id, title, author, pages, read) {
   myLibrary.push(new Book(id, title, author, pages, read));
 }
 
+function deleteBookFromLibrary(id) {
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].id === id) {
+      myLibrary.splice(i, 1);
+      break;
+    }
+  }
+}
+
 addBookToLibrary(
   crypto.randomUUID(),
   "Sherlock Holmes",
