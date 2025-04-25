@@ -74,14 +74,38 @@ function renderBooks() {
   });
 }
 
+// adding initial data for library
 addBookToLibrary(
   crypto.randomUUID(),
   "Sherlock Holmes",
-  "Conan Doyle",
+  "Author Conan Doyle",
   290,
   false
 );
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500, true);
+addBookToLibrary(
+  crypto.randomUUID(),
+  "War and Peace",
+  "Leo Tolstoy",
+  209,
+  false
+);
+addBookToLibrary(crypto.randomUUID(), "Ulysses", "James Joyce", 144, true);
+addBookToLibrary(crypto.randomUUID(), "Utopia", "Sir Thomas Moor", 289, true);
+addBookToLibrary(crypto.randomUUID(), "Time Machine", "H.G Wells", 287, false);
+addBookToLibrary(
+  crypto.randomUUID(),
+  "Romeo and Juliet",
+  "William Shakespeare",
+  359,
+  false
+);
+addBookToLibrary(
+  crypto.randomUUID(),
+  "The Great Gatsby",
+  "F. Scott Fitzgerald",
+  353,
+  true
+);
 
 renderBooks();
 
