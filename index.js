@@ -43,7 +43,9 @@ function renderBooks() {
         <p class="book-author">${book.author}</p>
         <p class="book-pages">${book.pages} pages</p>
         <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
-        <button class="delete-book" data-uid=${book.id}>X</button>
+        <button class="delete-book" data-uid=${
+          book.id
+        } aria-label="delete book" title="delete this book">X</button>
       </div>
       `
     )
@@ -90,15 +92,7 @@ modalAddBookButton.addEventListener("click", (event) => {
     bookStatus
   );
 
-  const newBook = myLibrary[myLibrary.length - 1];
-  bookContainer.innerHTML += `
-    <div class="book-card" data-uid=${newBook.id}>
-      <h3 class="book-title">${newBook.title}</h3>
-      <p class="book-author">${newBook.author}</p>
-      <p class="book-pages">${newBook.pages} pages</p>
-      <p class="book-status">${newBook.read ? "read" : "not read yet"}<p/>
-    </div>
-    `;
+  renderBooks();
 
   addBookModal.close();
 });

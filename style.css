@@ -83,6 +83,18 @@ main h1 {
   color: rgb(98, 98, 98);
 }
 
+.delete-book {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  color: rgb(243, 77, 77);
+  cursor: pointer;
+}
+
 
 #add-book-modal {
   padding: 3rem;
