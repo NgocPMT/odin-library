@@ -68,11 +68,10 @@ main h1 {
   color: rgb(98, 98, 98);
 }
 
-.book-pages {
+.book-pages, .book-status {
   font-size: 1rem;
   color: rgb(98, 98, 98);
 }
-
 .book-card::before {
   content: "";
   position: absolute;

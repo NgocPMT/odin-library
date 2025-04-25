@@ -1,28 +1,25 @@
 const myLibrary = [];
 
-function Book(id, title, author, pages) {
+function Book(id, title, author, pages, read) {
   this.id = id;
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.read = read;
 }
 
-function addBookToLibrary(id, title, author, pages) {
-  myLibrary.push(new Book(id, title, author, pages));
+function addBookToLibrary(id, title, author, pages, read) {
+  myLibrary.push(new Book(id, title, author, pages, read));
 }
 
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
-addBookToLibrary(crypto.randomUUID(), "Sherlock Holmes", "Conan Doyle", 290);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500);
+addBookToLibrary(
+  crypto.randomUUID(),
+  "Sherlock Holmes",
+  "Conan Doyle",
+  290,
+  false
+);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500, true);
 
 console.log(myLibrary);
 
@@ -35,6 +32,7 @@ let books = myLibrary
       <h3 class="book-title">${book.title}</h3>
       <p class="book-author">${book.author}</p>
       <p class="book-pages">${book.pages} pages</p>
+      <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
     </div>
     `
   )
