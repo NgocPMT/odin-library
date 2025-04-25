@@ -33,6 +33,7 @@ let books = myLibrary
       <p class="book-author">${book.author}</p>
       <p class="book-pages">${book.pages} pages</p>
       <p class="book-status">${book.read ? "read" : "not read yet"}<p/>
+      <button class="delete-book">X</button>
     </div>
     `
   )

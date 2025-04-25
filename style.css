@@ -59,6 +59,16 @@ main h1 {
   overflow: hidden;
 }
 
+.book-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15px;
+  background-color: rgb(124, 170, 223);
+}
+
 .book-title {
   font-size: 1.25rem;
 }
@@ -72,15 +82,7 @@ main h1 {
   font-size: 1rem;
   color: rgb(98, 98, 98);
 }
-.book-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 15px;
-  background-color: rgb(124, 170, 223);
-}
+
 
 #add-book-modal {
   padding: 3rem;
