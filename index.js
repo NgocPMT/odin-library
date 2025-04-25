@@ -28,7 +28,7 @@ const bookContainer = document.getElementById("book-container");
 let books = myLibrary
   .map(
     (book) => `
-    <div class="book-card">
+    <div class="book-card" data-uid=${book.id}>
       <h3 class="book-title">${book.title}</h3>
       <p class="book-author">${book.author}</p>
       <p class="book-pages">${book.pages} pages</p>
@@ -70,7 +70,7 @@ modalAddBookButton.addEventListener("click", (event) => {
 
   const newBook = myLibrary[myLibrary.length - 1];
   bookContainer.innerHTML += `
-    <div class="book-card">
+    <div class="book-card" data-uid=${newBook.id}>
       <h3 class="book-title">${newBook.title}</h3>
       <p class="book-author">${newBook.author}</p>
       <p class="book-pages">${newBook.pages} pages</p>
