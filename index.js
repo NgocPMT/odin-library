@@ -22,18 +22,8 @@ function deleteBookFromLibrary(id) {
   renderBooks();
 }
 
-addBookToLibrary(
-  crypto.randomUUID(),
-  "Sherlock Holmes",
-  "Conan Doyle",
-  290,
-  false
-);
-addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500, true);
-
-const bookContainer = document.getElementById("book-container");
-
 function renderBooks() {
+  const bookContainer = document.getElementById("book-container");
   console.log(myLibrary);
   let books = myLibrary
     .map(
@@ -61,6 +51,19 @@ function renderBooks() {
     );
   });
 }
+Book.prototype.setStatus = function () {
+  this.read = !this.read;
+  renderBooks();
+};
+
+addBookToLibrary(
+  crypto.randomUUID(),
+  "Sherlock Holmes",
+  "Conan Doyle",
+  290,
+  false
+);
+addBookToLibrary(crypto.randomUUID(), "Cats", "Uncle Bao", 1500, true);
 
 renderBooks();
 
@@ -72,17 +75,13 @@ newBookButton.addEventListener("click", () => addBookModal.showModal());
 modalCloseButton.addEventListener("click", () => addBookModal.close());
 
 const modalAddBookButton = document.querySelector(".modal-add-button");
-const bookTitleEL = document.querySelector("#title");
-const bookAuthorEL = document.querySelector("#author");
-const bookPagesEl = document.querySelector("#pages");
-const bookStatusEL = document.querySelector("#read");
 
 modalAddBookButton.addEventListener("click", (event) => {
   event.preventDefault();
-  const bookTitle = bookTitleEL.value;
-  const bookAuthor = bookAuthorEL.value;
-  const bookPages = bookPagesEl.value;
-  const bookStatus = bookStatusEL.checked;
+  const bookTitle = document.querySelector("#title").value;
+  const bookAuthor = document.querySelector("#author").value;
+  const bookPages = document.querySelector("#pages").value;
+  const bookStatus = document.querySelector("#read").checked;
 
   addBookToLibrary(
     crypto.randomUUID(),
