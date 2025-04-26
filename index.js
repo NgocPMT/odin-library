@@ -1,11 +1,33 @@
 const myLibrary = [];
 
-function Book(id, title, author, pages, read) {
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+// function Book(id, title, author, pages, read) {
+//   this.id = id;
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
+
+// Book.prototype.changeStatus = function () {
+//   this.read = !this.read;
+
+//   renderBooks();
+// };
+
+class Book {
+  constructor(id, title, author, pages, read) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  changeStatus() {
+    this.read = !this.read;
+
+    renderBooks();
+  }
 }
 
 function addBookToLibrary(id, title, author, pages, read) {
@@ -21,12 +43,6 @@ function deleteBookFromLibrary(id) {
   }
   renderBooks();
 }
-
-Book.prototype.changeStatus = function () {
-  this.read = !this.read;
-
-  renderBooks();
-};
 
 function renderBooks() {
   const bookContainer = document.getElementById("book-container");
